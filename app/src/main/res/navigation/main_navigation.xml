@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@+id/nav_splash_screen">
+
+
+    <fragment
+        android:id="@+id/nav_splash_screen"
+        android:name="com.app.android.exam.ui.fragment.SplashScreenFragment"
+        android:label="Splash Screen"
+        tools:layout="@layout/fragment_splash_screen">
+
+        <action
+            android:id="@+id/action_nav_splash_screen_to_nav_person_list"
+            app:destination="@id/nav_person_list"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/main_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_person_list"
+        android:name="com.app.android.exam.ui.fragment.PersonListFragment"
+        android:label="Person List"
+        tools:layout="@layout/fragment_person_list">
+
+        <action
+            android:id="@+id/action_nav_person_list_to_nav_person_details"
+            app:destination="@id/nav_person_details"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/main_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_person_details"
+        android:name="com.app.android.exam.ui.fragment.PersonDetailsFragment"
+        android:label="Person Details"
+        tools:layout="@layout/fragment_person_details">
+    </fragment>
+</navigation>
